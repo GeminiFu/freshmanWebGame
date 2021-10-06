@@ -1,14 +1,29 @@
-const main = document.getElementsByClassName("main-body")[0];
+const main = document.querySelector(".main-body"),
+    card = document.querySelectorAll(".card");
 
-console.dir(main)
+
+if (screen.orientation.angle === 90) {
+    main.classList.add("main-landscape");
+    changeCardSize(25);
+}
 
 window.addEventListener("orientationchange", function () {
-    console.log("the orientation of the device is now " + screen.orientation.angle);
-    if (window.outerWidth > window.outerHeight) {
-        console.log("HEEH");
+    let i = 0;
+
+    if (screen.orientation.angle === 0) {
         main.classList.remove("main-landscape");
+        changeCardSize(75);
     } else {
-        console.log("LALA")
         main.classList.add("main-landscape");
+        changeCardSize(25);
     }
 });
+
+function changeCardSize(width) {
+    let i = 0;
+    while (i < 2) {
+        card[i].style.width = `${width}vw`;
+        card[i].style.height = `${100 - width}vh`;
+        i++;
+    }
+}

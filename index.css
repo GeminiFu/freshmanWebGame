@@ -24,15 +24,11 @@ body {
 }
 
 button {
-    border: 0;
+    border: 1px solid black;
 }
 
 .card {
     background: rgb(212, 131, 39);
-    width: 100px;
-    height: 100px;
-}
-
-.card:hover {
-    box-shadow: 0 0 50px green;
+    width: 75vw;
+    height: 25vh;
 }
