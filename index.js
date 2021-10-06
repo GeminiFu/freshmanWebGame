@@ -1,6 +1,10 @@
 const main = document.querySelector(".main-body"),
     card = document.querySelectorAll(".card");
 
+if (window.outerWidth > window.outerHeight) {
+    main.classList.add("main-landscape");
+    changeCardSize(25);
+}
 
 if (screen.orientation.angle === 90) {
     main.classList.add("main-landscape");
