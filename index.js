@@ -6,7 +6,7 @@ if (window.outerWidth > window.outerHeight) {
     changeCardSize(25);
 }
 
-if (screen.orientation.angle === 90) {
+if (screen.orientation.angle !== 0) {
     main.classList.add("main-landscape");
     changeCardSize(25);
 }
